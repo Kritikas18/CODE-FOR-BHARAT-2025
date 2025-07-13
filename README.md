@@ -21,5 +21,7 @@ The project is hosted on Vercel, ensuring fast loading and easy sharing.
 Future scope includes Google Maps integration, email/SMS alerts, and backend database for storing requests and user data.
 
 This project was built during a hackathon as a real-world solution to make blood donation smarter and faster. Designed and developed by Kritika Singh with a mission to use tech for saving lives.
+FOR VIEWING IT IN A PHONE SWITCH TO DESKTOP VIEW FOR A BETTER EXPERIENCE.
+
 
 
