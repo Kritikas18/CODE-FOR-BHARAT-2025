@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #f6f7f9, #f9fbfd);
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #000000;
+  color: #fff;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color:#80ed99 ;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #80ed99;
+  transition: 0.4s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.btn {
+  padding: 8px 20px;
+  background-color:#80ed99 ;
+  color: #030303;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color:#80ed99 ;
+  color: black;
+  box-shadow: 0 0 20px white;
+}
+
+
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #000000;
+  color: #fff;
+  font-size: 0.9rem;
+}
+.glass-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 40px 60px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  color: #000000;
+}
+
+.hero-content h1 span {
+  color: #000000;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin: 20px 0;
+  color: #000000;
+}
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://wallpapers.com/images/featured/calm-aesthetic-5niukfhg2d68xqks.jpg') no-repeat center center/cover;
+  padding: 0 20px;
+}
+.hero-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 28px;
+  background-color: #80ed99;
+  color: #000000;
+  border: 2px solid white;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px rgba(128, 237, 153, 0.5);
+}
+
+.hero-btn:hover {
+  background-color: 80ed99;
+  color:black;
+  box-shadow: 0 0 20px #80ed99;
+}
+

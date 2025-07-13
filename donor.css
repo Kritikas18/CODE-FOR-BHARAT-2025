@@ -1,0 +1,316 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #fefefe;
+  color: #333;
+}
+
+/* NAVBAR */
+nav {
+  background-color: #e60033;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  color: #e60033;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.search-dropdown {
+  margin-left: 10px;
+}
+
+.search-dropdown select {
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: 2px solid white;
+  background-color: #ffffff;
+  color: #e60033;
+  font-size: 15px;
+  font-weight: 500;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  appearance: none;
+
+  /* Custom dropdown arrow */
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D'14'%20height%3D'14'%20fill%3D'%23e60033'%20viewBox%3D'0%200%2016%2016'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M1.5%205.5l6%206%206-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  padding-right: 40px;
+}
+
+.search-dropdown select:hover,
+.search-dropdown select:focus {
+  border-color: #ffd6dd;
+  background-color: #fefefe;
+  color: #b80029;
+}
+
+
+.search-bar select:hover,
+.search-bar select:focus {
+  border-color: #fff0f4;
+  background-color: #fefefe;
+  color: #c4002b;
+}
+
+.nav-actions button {
+  background: #ffffff;
+  border: 2px solid #fff;
+  padding: 8px 16px;
+  color: #e60033;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-actions button:hover {
+  background: #fff0f4;
+  color: #b00028;
+}
+
+/* HERO SECTION */
+.hero-banner {
+  background-image: url('https://images.saymedia-content.com/.image/t_share/MTkyOTkyMzE2OTQ3MDQ3NjQ1/website-background-templates.png');
+  background-size: cover;
+  background-position: center;
+  height: 75vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text {
+  color: #fff;
+  text-align: center;
+  max-width: 700px;
+  padding: 20px;
+  animation: fadeInUp 1.5s ease;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.cta-btn {
+  background-color: #e60033;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #c4002b;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* HOSPITAL SECTION */
+.hospital-section {
+  padding: 40px;
+  text-align: center;
+}
+
+.hospital-section h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #e60033;
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+.hospital-section h2:hover {
+  color: #b30029;
+  transform: scale(1.05);
+}
+
+.hospital-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #e60033;
+  transition: width 0.3s ease;
+}
+
+.hospital-section h2:hover::after {
+  width: 100%;
+}
+
+.hospital-track {
+  overflow: hidden;
+  position: relative;
+}
+
+.hospital-marquee {
+  display: flex;
+  gap: 30px;
+  animation: scrollHospitals 40s linear infinite;
+}
+
+.hospital-card {
+  width: 220px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.hospital-card:hover {
+  transform: scale(1.05);
+}
+
+.hospital-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.hospital-card .info {
+  padding: 15px;
+  text-align: left;
+}
+
+.hospital-card .info h4 {
+  color: #e60033;
+  margin-bottom: 5px;
+}
+
+.hospital-card .info p {
+  font-size: 14px;
+  color: #555;
+}
+
+@keyframes scrollHospitals {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* DONOR COUNTER */
+.donor-counter-section {
+  background: #f9f9f9;
+  padding: 60px 30px;
+  text-align: center;
+}
+
+.counter-box {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  border-radius: 15px;
+  padding: 40px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 3px solid #e60033;
+}
+
+.counter-box h2 {
+  font-size: 30px;
+  color: #e60033;
+  margin-bottom: 10px;
+}
+
+.counter-box .sub {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.donor-count {
+  font-size: 48px;
+  font-weight: bold;
+  color: #e60033;
+  animation: pulse 1s ease infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+/* FOOTER */
+.footer-line {
+  text-align: center;
+  background: #f8f8f8;
+  padding: 20px;
+  font-size: 1rem;
+  color: #444;
+  border-top: 2px solid #e60033;
+  margin-top: 60px;
+}
+
+

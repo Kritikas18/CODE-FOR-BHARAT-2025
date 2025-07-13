@@ -1,0 +1,327 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  background-image: url('https://images.saymedia-content.com/.image/t_share/MTkyOTkyMzE2OTQ3MDQ3NjQ1/website-background-templates.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+}
+
+
+header {
+  background: #000000;
+  color:rgb(0, 0, 0);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+header h1 {
+  font-size: 1.8rem;
+}
+header button {
+  padding: 0.6rem 1rem;
+  background: #f8f8f8;
+  color: #e60000;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+header button:hover {
+  background: #ffe5e5;
+}
+
+.banner {
+  background: #fff0f5;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #d80032;
+  font-weight: bold;
+  animation: glow 1.5s infinite alternate;
+}
+@keyframes glow {
+  from {
+    background-color: #fff0f5;
+  }
+  to {
+    background-color: #ffe6ec;
+  }
+}
+
+.search-section {
+  padding: 2rem;
+  
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.search-section select,
+.search-section button {
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+.search-section button {
+  background: #00bfa6;
+  color: white;
+  border: none;
+}
+.search-section button:hover {
+  background: #008c7e;
+}
+
+.donor-list {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.donor-card {
+  background: white;
+  border-left: 6px solid #00bfa6;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+.donor-card:hover {
+  transform: scale(1.03);
+}
+.donor-card h3 {
+  color: #f06595;
+}
+.donor-card p {
+  margin: 4px 0;
+  color: #333;
+}
+
+.chat-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #f06595;
+  color: white;
+  padding: 1rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+}
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.modal-content button {
+  margin-top: 1rem;
+  padding: 0.7rem 1.2rem;
+  background: #00bfa6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.modal-content button:hover {
+  background: #009f8c;
+}
+.donor-card {
+  width: 260px;
+  height: 180px;
+  perspective: 1000px;
+  margin: auto;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.donor-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  padding: 1rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card-front {
+  background: linear-gradient(135deg, #ffe5ec, #ffccd5);
+  color: #800000;
+}
+
+.card-front h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.card-front p {
+  font-size: 1rem;
+}
+
+.card-back {
+  background: linear-gradient(135deg, #d0f0f0, #b0e0e6);
+  color: #005b5b;
+  transform: rotateY(180deg);
+}
+
+.card-back button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #00bfa6;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.card-back button:hover {
+  background: #008c7e;
+}
+.chat-section {
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.chat-section h2 {
+  text-align: center;
+  color: #e60000;
+  margin-bottom: 1rem;
+}
+
+.chat-box {
+  height: 300px;
+  overflow-y: auto;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  border: 1px solid #ddd;
+}
+
+.message {
+  max-width: 75%;
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+}
+
+.message.user {
+  background: #e6ffed;
+  align-self: flex-end;
+  color: #111;
+}
+
+.message.bot {
+  background: #ffe9ec;
+  align-self: flex-start;
+  color: #111;
+}
+
+.chat-input {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.chat-input button {
+  padding: 0.8rem 1.2rem;
+  background: #e60000;
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.chat-input button:hover {
+  background: #b50000;
+}
+.chat-section,
+.chat-box,
+header,
+.donor-card,
+.modal-content {
+  background: rgba(255, 255, 255, 0.85); /* Soft white glassy effect */
+  backdrop-filter: blur(5px);
+}

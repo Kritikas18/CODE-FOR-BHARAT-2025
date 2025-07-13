@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #f6d365, #fda085);
+  color: #333;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('https://source.unsplash.com/1600x900/?blood-donor,hospital') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  width: 90%;
+  max-width: 1300px;
+  gap: 40px;
+}
+.left {
+  width: 55%;
+  color: #fff;
+}
+.left h1 {
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+}
+.left h1 span {
+  color: #80ed99;
+}
+.left p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.buttons {
+  margin-top: 30px;
+}
+.btn {
+  padding: 12px 26px;
+  border-radius: 30px;
+  background-color: #80ed99;
+  color: #333;
+  font-weight: bold;
+  margin-right: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background-color: #48bfe3;
+  color: white;
+}
+
+/* FORM */
+.glass-form {
+  width: 40%;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+.glass-form h2 {
+  margin-bottom: 20px;
+}
+.glass-form input {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+.glass-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #80ed99;
+  color: #333;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.glass-form button:hover {
+  background-color: #48bfe3;
+  color: white;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: #fff;
+  color: #333;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.modal-content h3 {
+  margin-bottom: 10px;
+  color: #5e60ce;
+}
+
+.modal-content label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.modal-buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  background: #80ed99;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-buttons button:hover {
+  background: #48bfe3;
+  color: white;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.radio-group {
+  margin: 15px 0;
+  display: flex;
+  gap: 20px;
+}
+.radio-group label {
+  font-size: 14px;
+}
+
+

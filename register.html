@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Register now| Register</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="register.css" />
+</head>
+<body>
+
+ 
+
+  <!-- Registration Section -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="content">
+      <div class="left">
+        <h1>Be a <span>Hero</span>. Donate Blood. Save Lives.</h1>
+        <p>Welcome to <strong>REDPULSE</strong>, the initiative that connects donors with those in need. Your one drop can be someone's lifeline.</p>
+        <div class="buttons">
+          <a href="login.html" class="btn">Login</a>
+        </div>
+      </div>
+
+      <div class="right glass-form">
+        <h2>Join Our Mission</h2>
+        <form onsubmit="return validateForm(event)">
+  <input type="text" placeholder="Full Name" required />
+  <input type="email" placeholder="Email Address" required />
+  <input type="password" placeholder="Password" required />
+  <input type="text" placeholder="Blood Group (e.g., B+)" required />
+
+  <div class="radio-group">
+    <label><input type="radio" name="role" value="donor" required /> Donor</label>
+    <label><input type="radio" name="role" value="patient" required /> Patient</label>
+  </div>
+
+  <button type="submit">Register</button>
+</form>
+
+
+    </div>
+  </section>
+  <div class="modal" id="ageModal">
+  <div class="modal-content">
+    <h3> Age Confirmation</h3>
+    <p>You must be 18 years or older to register as a blood donor.</p>
+    <label><input type="checkbox" id="ageCheckbox" /> I confirm I am 18 or older</label>
+    <div class="modal-buttons">
+      <button onclick="confirmAge()">Continue</button>
+      <button onclick="closeModal()">Cancel</button>
+    </div>
+    <p class="error" id="modalError"></p>
+  </div>
+</div>
+<!-- 🔻 FOOTER SECTION -->
+
+
+<script>
+  let selectedRole = ""; // Track selected role globally
+
+  function validateForm(e) {
+    e.preventDefault();
+
+    const role = document.querySelector('input[name="role"]:checked');
+    if (!role) {
+      alert("Please select a role: Donor or Patient.");
+      return false;
+    }
+
+    selectedRole = role.value; // Save role
+
+    // Show age confirmation modal
+    document.getElementById("ageModal").style.display = "flex";
+    return false;
+  }
+
+  function confirmAge() {
+    const ageConfirmed = document.getElementById("ageCheckbox").checked;
+    const error = document.getElementById("modalError");
+
+    if (!ageConfirmed) {
+      error.innerText = "Please confirm your age.";
+      return;
+    }
+
+    // Close modal
+    document.getElementById("ageModal").style.display = "none";
+    error.innerText = "";
+
+    // ✅ Show success alert immediately
+    alert("Thankyou for the Registeration!");
+
+    // ⏳ Redirect after 5 seconds
+    setTimeout(() => {
+      if (selectedRole === "donor") {
+        window.location.href = "donor.html";
+      } else if (selectedRole === "patient") {
+        window.location.href = "patient.html";
+      }
+    }, 3000);
+  }
+
+  function closeModal() {
+    document.getElementById("ageModal").style.display = "none";
+    document.getElementById("ageCheckbox").checked = false;
+    document.getElementById("modalError").innerText = "";
+  }
+</script>
+
+</body>
+</html>
+

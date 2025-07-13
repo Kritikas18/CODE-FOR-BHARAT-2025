@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>REDPULSE | Donor Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="donor.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<!-- 🔺 Navbar -->
+<nav>
+  <div class="nav-left">
+    <div class="profile-icon">👤</div>
+    <div class="nav-title">REDPULSE | Donor</div>
+
+    <div class="search-dropdown">
+      <select>
+        <option disabled selected>🔍 Search Nearby Hospitals</option>
+        <option>CityCare Hospital</option>
+        <option>RedCross Medical</option>
+        <option>LifeSaver Health</option>
+        <option>BloodLink Clinic</option>
+        <option>HopeCare Hospital</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="nav-actions">
+    <button onclick="confirmSwitch()">Switch to Patient</button>
+  </div>
+</nav>
+<!-- 🌟 HERO SECTION -->
+<section class="hero-banner">
+  <div class="hero-overlay">
+    <div class="hero-text">
+      <h1>Be a Hero. Donate Blood.</h1>
+      <p>One drop can be someone’s lifeline. Join the mission today.</p>
+      
+    </div>
+  </div>
+</section>
+
+<!-- 🏥 Hospitals Needing Blood -->
+<section class="hospital-section" id="hospitals">
+  <h2>Hospitals That Need Blood</h2>
+  <div class="hospital-track">
+    <div class="hospital-marquee">
+
+      <div class="hospital-card">
+        <img src="https://content.jdmagicbox.com/v2/comp/lucknow/dc/0522px522.x522.1238847695e8s6u8.dc/catalogue/forrd-gomti-nagar-lucknow-hospitals-3vsny72awh.jpg" alt="Hospital 1" />
+        <div class="info">
+          <h4>CityCare Hospital</h4>
+          <p>Need: A+, B−<br>Qty: 5 units</p>
+        </div>
+      </div>
+
+      <div class="hospital-card">
+        <img src="https://medanta.s3.ap-south-1.amazonaws.com/hospitals/February2025/YelIyqoA5uGHAsU26kWk9EH54Aumyv-metaUGF0bmEgSG9zcGl0YWwgSW1hZ2UgKDIpLmpwZw==-.jpg" alt="Hospital 2" />
+        <div class="info">
+          <h4>RedCross Medical</h4>
+          <p>Need: O+, AB+<br>Qty: 7 units</p>
+        </div>
+      </div>
+
+      <div class="hospital-card">
+        <img src="https://health63.com/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-07-at-14.20.49_001730a8-scaled.jpg" alt="Hospital 3" />
+        <div class="info">
+          <h4>HopeCare Hospital</h4>
+          <p>Need: B+, O−<br>Qty: 4 units</p>
+        </div>
+      </div>
+
+      <div class="hospital-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Hospital-de-Bellvitge.jpg/640px-Hospital-de-Bellvitge.jpg" alt="Hospital 4" />
+        <div class="info">
+          <h4>LifeSaver Health</h4>
+          <p>Need: AB−, A−<br>Qty: 3 units</p>
+        </div>
+      </div>
+
+      <div class="hospital-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjhhynEm-ZUYs6Q6B6gTO8oLFW2_hF85XyLQ&s" alt="Hospital 5" />
+        <div class="info">
+          <h4>CareWell Hospital</h4>
+          <p>Need: O−, A+<br>Qty: 6 units</p>
+        </div>
+      </div>
+
+      <div class="hospital-card">
+        <img src="https://www.parkhospital.in/storage/app/public/images/about/lHCD79a1CfpufZC9SiVEOHEM53LD302aWg6DDjVA.webp" alt="Hospital 6" />
+        <div class="info">
+          <h4>MercyMed Centre</h4>
+          <p>Need: B+, AB+<br>Qty: 4 units</p>
+        </div>
+      </div>
+
+      <div class="hospital-card">
+        <img src="https://irp.cdn-website.com/69c0b277/dms3rep/multi/PACE+Hospitals-+Hyderabad-+India.jpg" alt="Hospital 7" />
+        <div class="info">
+          <h4>Unity Health</h4>
+          <p>Need: A−, B−<br>Qty: 3 units</p>
+        </div>
+      </div>
+
+      <div class="hospital-card">
+        <img src="https://www.carehospitals.com/assets/images/main/bhubaneswar-hospital.png" alt="Hospital 8" />
+        <div class="info">
+          <h4>Global BloodLink</h4>
+          <p>Need: O+, AB−<br>Qty: 8 units</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 🧍‍♂️ LIVE DONOR COUNTER -->
+<section class="donor-counter-section">
+  <div class="counter-box">
+    <h2>Live Donor Counter</h2>
+    <p class="sub">People who visited & pledged to donate blood ❤️</p>
+    <div class="donor-count" id="donorCount">0</div>
+  </div>
+</section>
+
+
+<!-- ✅ Live Counter JS -->
+<script>
+  const donorCounter = document.getElementById("donorCount");
+  let count = Math.floor(Math.random() * 800) + 1000; // random start (1000–1799)
+  const finalCount = count + Math.floor(Math.random() * 400) + 200; // random end (+200–599)
+
+  function updateCounter() {
+    if (count < finalCount) {
+      count += 1;
+      donorCounter.innerText = count.toLocaleString();
+      setTimeout(updateCounter, 50); // slower, smooth count
+    } else {
+      donorCounter.innerText = finalCount.toLocaleString();
+    }
+  }
+
+  window.onload = updateCounter;
+</script>
+<script>
+  function confirmSwitch() {
+    const choice = confirm("Are you sure you want to switch as a patient?");
+    if (choice) {
+      window.location.href = "patient.html";
+    }
+  }
+</script>
+
+
+</body>
+</html>
